@@ -341,7 +341,7 @@ const helpContent = {
 };
 
 const nodeKeyToHelpKey = {
-  shellTypeLabel: 'shellType',
+  shellTypeLabel: 'Loại pháo',
   shellSizeLabel: 'shellSize',
   qualityLabel: 'quality',
   skyLightingLabel: 'skyLighting',

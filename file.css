@@ -36,3 +36,48 @@ footer {
 p { 
 font-size:20px; 
 }
+/* Thanh điều hướng */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Tạo không gian phía trên khi thanh điều hướng cố định */
+body {
+    padding-top: 50px;
+}
+
+/* Cuộn mượt */
+html {
+    scroll-behavior: smooth;
+}

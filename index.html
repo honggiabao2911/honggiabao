@@ -128,19 +128,37 @@
         <p><strong>Ngày cập nhật gần nhất:</strong> <span id="updateDate"></span></p>
     </footer>
 
-    <script>
-        document.getElementById("commentForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let name = document.getElementById("name").value;
-            let comment = document.getElementById("comment").value;
-            if(name && comment) {
-                let listItem = document.createElement("li");
-                listItem.innerHTML = `<strong>${name}:</strong> ${comment}`;
-                document.getElementById("commentDisplay").appendChild(listItem);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Xử lý form bình luận
+        document.getElementById("commentForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn chặn load lại trang
+
+            let name = document.getElementById("name").value.trim();
+            let comment = document.getElementById("comment").value.trim();
+
+            if (name === "" || comment === "") {
+                alert("Vui lòng nhập tên và lời nhắn!"); // Cảnh báo nếu để trống
+                return;
             }
+
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>${name}:</strong> ${comment}`;
+            document.getElementById("commentDisplay").appendChild(listItem);
+
+            // Xóa nội dung nhập sau khi gửi
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
         });
 
-        document.getElementById("updateDate").textContent = new Date().toLocaleDateString();
-    </script>
+        // Hiển thị ngày cập nhật gần nhất
+        document.getElementById("updateDate").textContent = new Date().toLocaleDateString("vi-VN");
+
+        // Xử lý menu điều hướng trên mobile
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+            document.querySelector(".nav-links").classList.toggle("nav-active");
+        });
+    });
+</script>
 </body>
 </html>

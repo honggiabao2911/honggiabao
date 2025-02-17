@@ -1,10 +1,10 @@
-/* ===== Cấu hình chung ===== */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    padding-top: 70px; /* Để tránh nội dung bị che bởi navbar cố định */
+    padding-top: 70px; /
 }
 
 h2 {
@@ -16,7 +16,6 @@ p, blockquote {
     font-size: 20px;
 }
 
-/* ===== Thanh điều hướng cố định ===== */
 #navbar {
     position: fixed;
     top: 0;
@@ -68,7 +67,6 @@ p, blockquote {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* ===== Mobile menu ===== */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -76,7 +74,6 @@ p, blockquote {
     cursor: pointer;
 }
 
-/* Định dạng cho màn hình nhỏ */
 @media screen and (max-width: 768px) {
     .nav-links {
         display: none;
@@ -99,12 +96,10 @@ p, blockquote {
     }
 }
 
-/* Hiệu ứng khi mở menu trên mobile */
 .nav-active {
     display: flex !important;
 }
 
-/* ===== Phần Nội Dung ===== */
 section {
     margin: 20px;
     padding: 20px;
@@ -116,20 +111,29 @@ section {
 header {
     background-color: #ffcc00;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     font-size: 24px;
     font-weight: bold;
-    background-image: url('background-dep-de-thuong-800x500.jpg');
+    background-image: url('img,mp3,mp4/background-dep-de-thuong-800x500.jpeg');
     background-size: cover;
-    color: white;
+    color: #FFD700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+     text-shadow: -1px -1px 0 #000,
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
 }
 
-/* ===== Footer ===== */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+img, video {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 10px auto; 
 }

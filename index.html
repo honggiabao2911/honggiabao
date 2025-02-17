@@ -152,28 +152,18 @@
         <p><strong>Ngày cập nhật gần nhất:</strong> <span id="updateDate"></span></p>
     </footer>
 <script>
-    // Xử lý form bình luận
-    document.getElementById("commentForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Ngăn chặn form gửi lại trang
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+            if(name && comment) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${name}:</strong> ${comment}`;
+                document.getElementById("commentDisplay").appendChild(listItem);
+            }
+        });
 
-        let name = document.getElementById("name").value.trim();
-        let comment = document.getElementById("comment").value.trim();
-
-        if (name !== "" && comment !== "") {
-            let listItem = document.createElement("li");
-            listItem.innerHTML = `<strong>${name}:</strong> ${comment}`;
-            document.getElementById("commentDisplay").appendChild(listItem);
-
-            // Xóa nội dung nhập sau khi gửi
-            document.getElementById("name").value = "";
-            document.getElementById("comment").value = "";
-        } else {
-            alert("Vui lòng nhập tên và lời nhắn!"); // Cảnh báo nếu để trống
-        }
-    });
-
-    // Hiển thị ngày cập nhật gần nhất
-    document.getElementById("updateDate").textContent = new Date().toLocaleDateString("vi-VN");
-</script>
+        document.getElementById("updateDate").textContent = new Date().toLocaleDateString();
+    </script>
 </body>
 </html>

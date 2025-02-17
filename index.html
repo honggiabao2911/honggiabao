@@ -13,7 +13,7 @@
         <h1 class="do" style="text-align: center">Báo Hoa Học Trò - Tri Ân Thầy Cô</h1>
         <h3 style="text-align: center;">Chủ đề: Tri Ân Thầy Cô - 20/11</h3>
     </header>
-
+<!-- Thanh kím thông tin trong web-->
 <nav id="navbar">
     <div class="nav-container">
         <a href="#" class="logo">Báo Hoa Học Trò</a>
@@ -162,9 +162,8 @@
                 document.getElementById("commentDisplay").appendChild(listItem);
             }
         });
-
         document.getElementById("updateDate").textContent = new Date().toLocaleDateString();
-    document.querySelector(".menu-toggle").addEventListener("click", function() {
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
         document.querySelector(".nav-links").classList.toggle("nav-active");
     });
     </script>

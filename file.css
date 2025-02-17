@@ -1,8 +1,116 @@
+/* ===== Cấu hình chung ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    padding-top: 70px; /* Để tránh nội dung bị che bởi navbar cố định */
+}
+
+h2 {
+    color: #ff6600;
+    font-size: 25px;
+}
+
+p, blockquote {
+    font-size: 20px;
+}
+
+/* ===== Thanh điều hướng cố định ===== */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Mobile menu ===== */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Định dạng cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hiệu ứng khi mở menu trên mobile */
+.nav-active {
+    display: flex !important;
+}
+
+/* ===== Phần Nội Dung ===== */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -11,73 +119,17 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: bold;
-}
-header{
-  background-image: url('background-dep-de-thuong-800x500.jpg');
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
+    background-image: url('background-dep-de-thuong-800x500.jpg');
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
-    color: #ff6600;
-}
-
+/* ===== Footer ===== */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-}
-p { 
-font-size:20px; 
-}
-/* Thanh điều hướng */
-#navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000;
-}
-
-#navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-#navbar ul li {
-    margin: 0 15px;
-}
-
-#navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: 0.3s;
-}
-
-#navbar ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-/* Tạo không gian phía trên khi thanh điều hướng cố định */
-body {
-    padding-top: 50px;
-}
-
-/* Cuộn mượt */
-html {
-    scroll-behavior: smooth;
+    margin-top: 20px;
 }

@@ -67,6 +67,43 @@ p, blockquote {
 .nav-links li a:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* ===== Mobile menu ===== */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Định dạng cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hiệu ứng khi mở menu trên mobile */
+.nav-active {
+    display: flex !important;
+}
+
 /* ===== Phần Nội Dung ===== */
 section {
     margin: 20px;
